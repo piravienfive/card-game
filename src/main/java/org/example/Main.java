@@ -17,6 +17,7 @@ public class Main {
     public static void main(String[] args) {
 
         CardGame game = new CardGame();
-        game.createDeck();
+        game.getDeck();
+        game.to_String();
         }
     }
