@@ -28,6 +28,8 @@ public class Main {
         game.to_String();
         game.sortDeckInNumberOrder();
         game.to_String();
+        game.sortDeckIntoSuits();
+        game.to_String();
 
     }
 }

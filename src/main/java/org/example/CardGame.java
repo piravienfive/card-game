@@ -32,11 +32,12 @@ public class CardGame {
             describedDeck.add(card.name);
         }
         System.out.println(describedDeck);
-        System.out.println(describedDeck.size());
     return describedDeck;
     }
 
     public Card dealCard() {
+        Card dealtCard = deckOfCards.getFirst();
+        deckOfCards.remove(dealtCard);
         return deckOfCards.getFirst();
     }
 
@@ -53,6 +54,33 @@ public class CardGame {
 
         }
         System.out.println(deckOfCards);
-        System.out.println(deckOfCards.size());;
     }
-}
+
+    public void sortDeckIntoSuits() {
+        ArrayList<Card> sortedBySuitDeck = new ArrayList<Card>();
+        sortDeckInNumberOrder();
+        for (Card card : deckOfCards){
+            if (card.suit.equals("♣")){
+                sortedBySuitDeck.add(card);
+            };
+        }
+        for (Card card : deckOfCards){
+            if (card.suit.equals("♦")){
+                sortedBySuitDeck.add(card);
+            };
+        }
+        for (Card card : deckOfCards){
+            if (card.suit.equals("♥")){
+                sortedBySuitDeck.add(card);
+            };
+        }
+        for (Card card : deckOfCards){
+            if (card.suit.equals("♠")){
+                sortedBySuitDeck.add(card);
+            };
+        }
+        System.out.println(sortedBySuitDeck);
+        deckOfCards = sortedBySuitDeck;
+    }
+
+    }
