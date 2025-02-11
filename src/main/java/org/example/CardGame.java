@@ -3,6 +3,7 @@ package org.example;
 import java.lang.reflect.AnnotatedArrayType;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class CardGame {
 
@@ -81,6 +82,11 @@ public class CardGame {
         }
         System.out.println(sortedBySuitDeck);
         deckOfCards = sortedBySuitDeck;
+    }
+
+    public void shuffleDeck(){
+        Collections.shuffle(deckOfCards);
+        System.out.println(deckOfCards);
     }
 
     }
