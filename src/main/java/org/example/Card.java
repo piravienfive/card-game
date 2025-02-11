@@ -12,7 +12,6 @@ public class Card {
         this.symbol = Integer.toString(value);
         if(this.value > 1 && this.value < 11) {
             this.name = String.format("%d of ", value) + String.format("%s", suit);
-            this.symbol = "A";
         } else if (this.value == 1) {
             this.name = String.format("Ace of %s", suit);
             this.value = 14;

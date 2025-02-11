@@ -18,20 +18,31 @@ package org.example;
 //● ArrayList<Card> sortDeckInNumberOrder() - Sorts the deck in number order (e.g. 2222333344445555 etc) and stores the new shuffled deck back into the deckOfCards attribute.
 //● ArrayList<Card> sortDeckIntoSuits() - Sorts the deck into suits (2,3,4,5,6,7,8,9,10,J,Q,K,A of hearts, then 2,3,4,5,6,7,8,9,10,J,Q,K,A of clubs etc.) and stores the new shuffled deck back into the deckOfCards attribute.
 //● ArrayList<Card> shuffleDeck() - Shuffles the deck into a random order and stores the new shuffled deck back into the deckOfCards attribute.
+
+//Stage 3
+//Create a class for Snap that extends CardGame. This class should use the methods defined above, as well as some new ones, to enable the user to play the game snap according to the following rules:
+//● By pressing enter in the command line, the user takes their turn.
+//● Each turn, a new card is dealt from the deck.
+//● The game continues until two cards in a row have the same symbol, at which point the “player” wins and the game ends.
+
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
-        CardGame game = new CardGame();
-        game.getDeck();
-        game.to_String();
-        game.sortDeckInNumberOrder();
-        game.to_String();
-        game.sortDeckIntoSuits();
-        game.to_String();
-        game.shuffleDeck();
-        game.to_String();
+//        CardGame game = new CardGame();
+//        game.getDeck();
+//        game.to_String();
+//        game.sortDeckInNumberOrder();
+//        game.to_String();
+//        game.sortDeckIntoSuits();
+//        game.to_String();
+//        game.shuffleDeck();
+//        game.to_String();
+
+        Snap newGame = new Snap();
+        newGame.startSnap();
 
     }
 }

@@ -38,6 +38,7 @@ public class CardGame {
 
     public Card dealCard() {
         Card dealtCard = deckOfCards.getFirst();
+
         deckOfCards.remove(dealtCard);
         return deckOfCards.getFirst();
     }
