@@ -2,7 +2,7 @@ package org.example;
 //Stage 1
 //        Using classes, ArrayLists and methods, create a deck of Cards.
 //You should use the following classes:
-//CardGame
+//CardGameen
 //● Contains an ArrayList<Card> for the deckOfCards that contains all 52 cards. This is created and populated when the game is constructed.
 //        ● Has a name which is also defined in the constructor.
 //        ● Has a getDeck method that lists out the cards in the deck.
@@ -26,6 +26,11 @@ package org.example;
 //● The game continues until two cards in a row have the same symbol, at which point the “player” wins and the game ends.
 
 
+
+
+
+
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -42,7 +47,7 @@ public class Main {
 //        game.to_String();
 
         Snap newGame = new Snap();
-        newGame.startSnap();
+        newGame.startGame();
 
     }
 }

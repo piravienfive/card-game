@@ -87,7 +87,7 @@ public class CardGame {
 
     public void shuffleDeck(){
         Collections.shuffle(deckOfCards);
-        System.out.println(deckOfCards);
+//        System.out.println(deckOfCards);
     }
 
     }
