@@ -78,7 +78,7 @@ public class Snap extends CardGame {
                     System.out.println("Bye bye...");
                 }
                 else if (command.equals("SNAP")) {
-                    if(prevCard1.symbol.equals(prevCard2.symbol)){
+                    if(prevCard1.symbol.equals(prevCard2.symbol) && prevCard1 != prevCard2 ){
                         System.out.println("That's a match! Congratulations, you won...");
                     }
                     else {
@@ -125,7 +125,7 @@ public class Snap extends CardGame {
                     System.out.println("Bye bye...");
                 }
                 else if (command.equals("SNAP")) {
-                    if(prevCard1.symbol.equals(prevCard2.symbol)){
+                    if(prevCard1.symbol.equals(prevCard2.symbol) && prevCard1 != prevCard2){
                         System.out.println(String.format("That's a match! Congratulations, Player %d won...", d));
                     }
                     else {
