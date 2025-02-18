@@ -45,7 +45,7 @@ public class Snap extends CardGame {
             Card card1 = super.dealCard();
             System.out.println(card1.name);
 
-            System.out.println(String.format("now %s Enter to draw again: ", player2.name));
+            System.out.println(String.format("now type Enter to draw: "));
             String userInput2 = input.nextLine().toUpperCase();
             turns(card1, card1, userInput2, playerCount, player2);
         } else if (userInput.equals("EXIT")) {
@@ -78,6 +78,10 @@ public class Snap extends CardGame {
     }
 
     public void turns(Card prevCard1, Card prevCard2, String command, int playerCount, Player currPlayer) {
+        if(deckOfCards.isEmpty()){
+            super.getDeck();
+            super.shuffleDeck();
+        }
         if (playerCount == 1) {
             if (!command.equals("ENTER") && !command.equals("EXIT") && !command.equals("SNAP")) {
                 System.out.println("Invalid input, please type Enter: to draw a card, Exit: to exit game, Snap: to call a match... ");
