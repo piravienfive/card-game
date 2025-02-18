@@ -14,15 +14,17 @@ public class Snap extends CardGame {
     // You want the game to carry on until the isGameOver to be true
 
     public void startGame() {
-        System.out.println("Hi! Let's play Snap, type 1 or 2 to decide how many players will play...");
-        Integer playerCount = Integer.valueOf(input.nextLine());
+        System.out.println("Type 1 or 2 to decide how many players will play...");
+        int playerCount = Integer.valueOf(input.nextLine());
         if (playerCount == 1) {
-            System.out.println("Hi! Let's play Snap, type Enter to start by taking your turn...");
+            System.out.println("Starting 1 player game...");
+            System.out.println("type Enter to start by taking your turn...");
             super.getDeck();
             super.shuffleDeck();
             turn(1);
         }
-        if (playerCount == 2) {
+        else if (playerCount == 2) {
+            System.out.println("Starting 2 player game...");
             player1.setName();
             player2.setName();
             System.out.println(String.format("Let's play! %s goes first, type Enter to start by taking your turn...", player1.name));
@@ -30,12 +32,34 @@ public class Snap extends CardGame {
             super.shuffleDeck();
             turn(playerCount);
         }
+        else{
+            System.out.println("That was not a valid input, please enter 1 for a 1 player game, or 2 for a 2 player game: ");
+            startGame();
+        }
     }
 
-    public void turn(Integer playerCount) {
+    public void turn(int playerCount) {
         String userInput = input.nextLine().toUpperCase();
 
-        if (userInput.equals("ENTER")) {
+        if (userInput.equals("ENTER") && playerCount == 1) {
+            Card card1 = super.dealCard();
+            System.out.println(card1.name);
+
+            System.out.println(String.format("now %s Enter to draw again: ", player2.name));
+            String userInput2 = input.nextLine().toUpperCase();
+            turns(card1, card1, userInput2, playerCount, player2);
+        } else if (userInput.equals("EXIT")) {
+            System.out.println("Bye bye...");
+            System.exit(0);
+        } else if (userInput.equals("SNAP")) {
+            System.out.println("Not SNAP! You lose :( ");
+        } else {
+            System.out.println(String.format("Invalid input by %s, please type Enter: to draw a card, Exit: to exit game, Snap: to call a match... ", player1.name));
+            turn(playerCount);
+        }
+
+
+        if (userInput.equals("ENTER") && playerCount == 1) {
             Card card1 = super.dealCard();
             System.out.println(card1.name);
 
@@ -53,7 +77,7 @@ public class Snap extends CardGame {
         }
     }
 
-    public void turns(Card prevCard1, Card prevCard2, String command, Integer playerCount, Player currPlayer) {
+    public void turns(Card prevCard1, Card prevCard2, String command, int playerCount, Player currPlayer) {
         if (playerCount == 1) {
             if (!command.equals("ENTER") && !command.equals("EXIT") && !command.equals("SNAP")) {
                 System.out.println("Invalid input, please type Enter: to draw a card, Exit: to exit game, Snap: to call a match... ");

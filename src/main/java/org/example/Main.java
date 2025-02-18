@@ -49,6 +49,7 @@ public class Main {
 //        game.to_String();
 
         Snap newGame = new Snap();
+        System.out.println("Hi! Let's play Snap...");
         newGame.startGame();
 
     }
