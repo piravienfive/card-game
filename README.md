@@ -38,3 +38,4 @@
 - I hope I can make my code a little bit neater in the future.
 - I know there are most likely to ways to refactor my code and make it a bit more succinct.
 - I want to make the game carry on when the deck is empty by creating a new deck and shuffling that, then dealing from there.
+- I would like the game to work in a way were even if therre is a chance for snap, if the  player isn't paying attention, he can still draw a card instead. I had half of this working but it was running into an error becuase on the 2nd snap oppurtunity, my timer couldn'd work becuase it had already been cancelled. I would like to get past this error by possibly instantiating a new timer every time.
