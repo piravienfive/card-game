@@ -1,8 +1,6 @@
 package org.example;
 
-import java.util.Scanner;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 
 public class Snap extends CardGame {
     Scanner input = new Scanner(System.in);
@@ -15,7 +13,15 @@ public class Snap extends CardGame {
 
     public void startGame() {
         System.out.println("Type 1 or 2 to decide how many players will play...");
-        int playerCount = Integer.valueOf(input.nextLine());
+        String playerCountString = input.nextLine();
+        int playerCount = 0;
+        if(Objects.equals(playerCountString, "1") || Objects.equals(playerCountString, "2")) {
+            playerCount = Integer.valueOf(playerCountString);
+        }
+        else{
+            System.out.println("That was not a valid input, please enter 1 for a 1 player game, or 2 for a 2 player game: ");
+            startGame();
+        }
         if (playerCount == 1) {
             System.out.println("Starting 1 player game...");
             System.out.println("type Enter to start by taking your turn...");
@@ -31,10 +37,6 @@ public class Snap extends CardGame {
             super.getDeck();
             super.shuffleDeck();
             turn(playerCount);
-        }
-        else{
-            System.out.println("That was not a valid input, please enter 1 for a 1 player game, or 2 for a 2 player game: ");
-            startGame();
         }
     }
 
@@ -102,7 +104,12 @@ public class Snap extends CardGame {
                             if (userWinInput.equals("SNAP")) {
                                 newTimer.cancel();
                                 System.out.println("You win");
-                            } else {
+                            }
+//                            else if (userWinInput.equals("ENTER")) {
+//                                newTimer.cancel();
+//                                turns(prevCard1, prevCard2, userWinInput, playerCount, currPlayer);
+//                            }
+                            else {
                                 newTimer.cancel();
                                 System.out.println("You lose");
                         }
@@ -173,7 +180,13 @@ public class Snap extends CardGame {
                             if (userWinInput.equals("SNAP")) {
                                 newTimer.cancel();
                                 System.out.println(String.format("That's a match! Congratulations, Player %s won...", currPlayer.name));
-                            } else {
+                            }
+//                            else if (userWinInput.equals("ENTER")) {
+//                                newTimer.cancel();
+//                                turns(prevCard1, prevCard2, userWinInput, playerCount, currPlayer);
+//
+//                            }
+                            else {
                                 newTimer.cancel();
                                 System.out.println(String.format("Not SNAP! Player %s loses :( ", currPlayer.name));
                             }
