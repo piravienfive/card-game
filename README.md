@@ -25,3 +25,9 @@
 ## Player Class
 
 - made a simple player class to make the game 2 player. The player class only takes a username with a setName method.
+
+## How to Run the Game
+
+- Install Java JDK 8+ and an IDE like ItelliJ.
+- Clone this repository using ssh or https.
+- Run Main.java
