@@ -9,7 +9,7 @@ public class Snap extends CardGame {
     boolean isGameOver = false;
     boolean isTimerFinished = false;
 
-    // You want the game to carry on until the isGameOver to be true
+    // You want the game to carry on until the isGameOver to be true.
 
     public void startGame() {
         System.out.println("Type 1 or 2 to decide how many players will play...");
