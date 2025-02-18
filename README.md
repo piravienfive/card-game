@@ -17,10 +17,11 @@
 ## Snap Class
 
 - in this class I start creating the methods that allow the user to play a game of Snap.
-- Used multiple scanners to take user input.
-- I used a lot of if statements to build up the logic depending on what the user inputs into the scanner.
+- Used multiple scanners to take user inputs.
+- I used if statements to build up the logic depending on what the user inputs into the scanner.
 - A lot of the functionality comes from using my methods recursively.
 - Used a timer and timerTask to give the user a certain amount of time to input snap, if not they lose. The timer starts as soon as there is an oppurtunity for snap.
+- Incase the the whole deck is dealt without a chance for snap, the game will automatically create a new deck and shuffle it so that the game can continue.
 
 ## Player Class
 
@@ -31,3 +32,9 @@
 - Install Java JDK 8+ and an IDE like ItelliJ.
 - Clone this repository using ssh or https.
 - Run Main.java
+
+## Future Improvements
+
+- I hope I can make my code a little bit neater in the future.
+- I know there are most likely to ways to refactor my code and make it a bit more succinct.
+- I want to make the game carry on when the deck is empty by creating a new deck and shuffling that, then dealing from there.
