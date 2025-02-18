@@ -156,6 +156,10 @@ public class Snap extends CardGame {
             }
 
         } else if (playerCount == 2) {
+            if(deckOfCards.isEmpty()) {
+                super.getDeck();
+                super.shuffleDeck();
+            }
             if (!command.equals("ENTER") && !command.equals("EXIT") && !command.equals("SNAP")) {
                 System.out.println(String.format("Invalid input by %s, please type Enter: to draw a card, Exit: to exit game, Snap: to call a match... ", currPlayer.name));
                 String newUserInput = input.nextLine().toUpperCase();
