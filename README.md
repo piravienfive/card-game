@@ -1,4 +1,4 @@
-# My card-game Porject Breakdown
+# My card-game Project Breakdown
 
 - Use java classes and emthods to build a interactive game of snap that can be played in the terminal.
 - The game should be playable by running the main class.
